@@ -1,91 +1,51 @@
 <div align="center">
 
-<img src="./assets/banner.svg" width="100%" alt="AI Builder on the way"/>
+<img src="./assets/banner.svg" width="100%" alt="po-et — agent infrastructure and developer tools"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Cascadia+Code&weight=700&size=19&duration=2800&pause=700&color=22D3EE&center=true&vCenter=true&width=680&height=40&lines=Hi%2C+I'm+po-et.+AI+Builder+on+the+way.;Backend+by+trade%2C+agent+infra+by+obsession.;Read+the+source.+Measure+it.+Then+patch+it." alt="typing"/>
-
-<p>
-  <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="26px" height="26px"/>
-  <strong>Currently focused on Agent Infra &amp; the tooling around it.</strong>
-</p>
+<p><strong>Backend engineer working on MCP, agent tooling and RAG.</strong></p>
+<p>I fix the small failures that make AI tools unreliable: authentication, pagination, streaming and resource cleanup.</p>
+<p>专注 AI 工具与 Agent 基础设施，做能复现、能验证的修复。</p>
 
 <p>
-  <code>🛠️ Backend Engineer</code>
-  <code>🤖 AI Builder on the way</code>
-  <code>📍 China</code>
-  <code>🌙 Ships at night</code>
-</p>
-
-<p>
-  <img src="https://img.shields.io/badge/AI%20Builder-on%20the%20way-0A0A0A?style=for-the-badge&labelColor=22D3EE&logoColor=white" alt="AI Builder on the way"/>
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fsearch%2Fissues%3Fq%3Dauthor%3Apo-et%2Btype%3Apr%2Bis%3Amerged&query=%24.total_count&label=PRs%20merged&style=for-the-badge&color=22d3ee&labelColor=0A0A0A" alt="PRs merged"/>
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fsearch%2Fissues%3Fq%3Dauthor%3Apo-et%2Btype%3Apr&query=%24.total_count&label=PRs%20opened&style=for-the-badge&color=a78bfa&labelColor=0A0A0A" alt="PRs opened"/>
-  <img src="https://img.shields.io/github/followers/po-et?style=for-the-badge&color=f472b6&labelColor=0A0A0A" alt="followers"/>
-  <img src="https://komarev.com/ghpvc/?username=po-et&style=for-the-badge&color=22d3ee&label=PROFILE+VIEWS" alt="views"/>
+  <a href="https://github.com/pulls?q=is%3Apr+author%3Apo-et+is%3Amerged"><img src="https://img.shields.io/badge/Merged-upstream-22d3ee?style=flat-square" alt="Merged upstream pull requests"/></a>
+  <a href="https://github.com/pulls?q=is%3Apr+author%3Apo-et+is%3Aopen"><img src="https://img.shields.io/badge/Current-pull_requests-a78bfa?style=flat-square" alt="Current open pull requests"/></a>
 </p>
 
 </div>
 
-<table>
-<tr>
-<td valign="top" width="50%">
+## Selected merged contributions
 
-#### 🧭 What I'm Building
+A few fixes accepted upstream in [MCP Go](https://github.com/mark3labs/mcp-go):
 
-<p>
-<strong>Agent Infra</strong><br/><code>plugin runtimes · sandboxes · tool boundaries</code><br/>
-<strong>RAG Systems</strong><br/><code>retrieval · vector indexing · streaming</code><br/>
-<strong>Dev Tooling</strong><br/><code>package managers · CI guards · release safety</code><br/>
-<strong>Own Plugins</strong><br/><code>session-guard · session-snapshot · http-probe</code><br/>
-</p>
+| Problem | Change | Pull request |
+| --- | --- | --- |
+| Dynamic OAuth registration omitted the application type. | Send `application_type` in the registration request. | [#1003](https://github.com/mark3labs/mcp-go/pull/1003) · merged Oct 22, 2026 |
+| Authorization callbacks needed to stay tied to the transaction that started them. | Bind callbacks to their initiating authorization transaction. | [#1006](https://github.com/mark3labs/mcp-go/pull/1006) · merged Oct 22, 2026 |
+| Resources with the same name could be missed during pagination. | Handle the cursor tie-break and legacy name-only cursors. | [#991](https://github.com/mark3labs/mcp-go/pull/991) · merged Oct 13, 2026 |
+| A recognized modern discovery response could still fall back to the legacy handshake. | Avoid legacy initialization after modern discovery. | [#997](https://github.com/mark3labs/mcp-go/pull/997) · merged Oct 13, 2026 |
 
-#### ⚡ How I Work
+[All merged PRs](https://github.com/pulls?q=is%3Apr+author%3Apo-et+is%3Amerged) · [Open PRs](https://github.com/pulls?q=is%3Apr+author%3Apo-et+is%3Aopen)
 
-<p>
-<code>Reproduce before patching.</code><br/>
-<code>Measure the tool, don't trust its docs.</code><br/>
-<code>Every patch ships with a failing test first.</code><br/>
-<code>Adversarial review before every PR.</code><br/>
-</p>
+## Tools I build
 
-</td>
-<td valign="top" width="48%">
+| Tool | What it does | Try it |
+| --- | --- | --- |
+| [HAR Triage](https://github.com/po-et/dsh-har-triage) | Turns a local HAR capture into an offline report of failed and slow requests, linked to the original entry indexes. | [Synthetic demo and CLI](https://github.com/po-et/dsh-har-triage#try-without-harness) |
+| [HTTP Probe](https://github.com/po-et/dsh-http-probe) | Gives a Harness agent an HTTP status, header latency and selected response headers without reading the body. Supports cancellation and a GET fallback when HEAD is unsupported. | [Install in Harness](https://github.com/po-et/dsh-http-probe#install--安装) |
+| [SheetDiff](https://github.com/po-et/dsh-sheet-diff) | Compares CSV or XLSX files by a business key. Review changed values, types, formulas and stored results in a local HTML report. | [Run the synthetic demo](https://github.com/po-et/dsh-sheet-diff#try-it-locally) |
 
-#### 💻 Open Source Experience
+HAR Triage and SheetDiff also run as standalone CLIs. Their examples use synthetic data and need no model call. SheetDiff compares stored formula results without editing workbooks or recalculating formulas.
 
-> 🔭 Contributions land in AI infra & the tooling under it.
+## How I contribute
 
-- 🧠 **Contributor — [Tencent/WeKnora](https://github.com/Tencent/WeKnora)**
-  <br/><sub>RAG engine: vector indexing, SSRF egress policy, streaming replay, storage transport</sub>
-- 🧩 **Contributor — [dsh-market](https://github.com/dsh-market/dsh-market)**
-  <br/><sub>Plugin marketplace: install/update/rollback correctness across pnpm 11 → 12</sub>
-- 📚 **Contributor — [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)**
-  <br/><sub>Catalog probe scheduling + three of my own plugins listed</sub>
-- 🔌 **Contributor — [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk)**
-  <br/><sub>Server-side types & subscription lifecycle</sub>
-- 🐉 **Contributor — [alibaba/open-code-review](https://github.com/alibaba/open-code-review)**
+I start with a reproducible failure, keep the fix focused, and add a regression test. I use AI assistance for development and review, with disclosure according to each project's policy.
 
-</td>
-</tr>
-</table>
+Most of my code is Go, TypeScript and Python. I am currently focused on MCP clients, agent SDKs and the developer tools around them.
 
-<div align="center">
-
-#### 🧰 Stack
-
-<img src="https://skillicons.dev/icons?i=go,ts,js,nodejs,python,react,vue,docker,kubernetes,postgres,redis,mysql,git,linux,vim&theme=dark" alt="stack"/>
-
-#### 📈 Signals
-
-<img height="165" src="https://streak-stats.demolab.com/?user=po-et&theme=tokyonight&hide_border=true&background=0D1117&ring=22D3EE&fire=F472B6&currStreakLabel=22D3EE" alt="streak"/>
-<!-- github-readme-stats' official host (github-readme-stats.vercel.app) was returning 503
-     when this was written, so the community mirror is used here. Swap the host back to
-     github-readme-stats.vercel.app once it is healthy again; the query string is identical. -->
-<img height="165" src="https://github-readme-stats-eight-theta.vercel.app/api?username=po-et&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&theme=tokyonight&bg_color=0D1117&icon_color=22D3EE&title_color=22D3EE" alt="stats"/>
+<details>
+<summary>Stack</summary>
 
 <br/>
+<img src="https://skillicons.dev/icons?i=go,ts,js,nodejs,python,react,vue,docker,kubernetes,postgres,redis,mysql,git,linux,vim&theme=dark" alt="Go, TypeScript, JavaScript, Node.js, Python and backend tooling"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Cascadia+Code&weight=600&size=15&duration=4000&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&height=30&lines=Not+an+AI+researcher.+An+engineer+who+builds+what+agents+run+on.;Still+on+the+way.+That's+the+point." alt="footer typing"/>
-
-
-</div>
+</details>
