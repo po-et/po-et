@@ -15,10 +15,11 @@
 
 ## Selected merged contributions
 
-A few fixes accepted upstream in [MCP Go](https://github.com/mark3labs/mcp-go):
+A few fixes accepted upstream in [MCP Go](https://github.com/mark3labs/mcp-go) and [LanceDB](https://github.com/lancedb/lancedb):
 
 | Problem | Change | Pull request |
 | --- | --- | --- |
+| LanceDB could not embed NumPy text arrays with Ollama. | Convert arrays to lists before the batch embedding request. | [LanceDB #4605](https://github.com/lancedb/lancedb/pull/4605) · merged Oct 23, 2026 (UTC+8) |
 | Dynamic OAuth registration omitted the application type. | Send `application_type` in the registration request. | [#1003](https://github.com/mark3labs/mcp-go/pull/1003) · merged Oct 22, 2026 |
 | Authorization callbacks needed to stay tied to the transaction that started them. | Bind callbacks to their initiating authorization transaction. | [#1006](https://github.com/mark3labs/mcp-go/pull/1006) · merged Oct 22, 2026 |
 | Resources with the same name could be missed during pagination. | Handle the cursor tie-break and legacy name-only cursors. | [#991](https://github.com/mark3labs/mcp-go/pull/991) · merged Oct 13, 2026 |
